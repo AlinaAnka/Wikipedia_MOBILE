@@ -13,7 +13,6 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
 public class EmulationDriver implements WebDriverProvider {
 
     private static final EmulationConfig config = ConfigFactory.create(EmulationConfig.class);
