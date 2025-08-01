@@ -59,4 +59,6 @@ tasks.register('mobile', Test) {
     useJUnitPlatform {
         includeTags 'mobile'
     }
+    systemProperty 'platform', 'android'
+    systemProperty 'deviceHost', 'local'
 }
