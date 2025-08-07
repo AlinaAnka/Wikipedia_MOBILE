@@ -1,4 +1,4 @@
-# Проект по автоматизации тестовых сценариев для сайта Wikipedia <a href="https://www.moscowbooks.ru"> <img src="images/logo.png" width="200" >
+# Проект по автоматизации тестовых сценариев для мобильного приложения Wikipedia <a href="https://www.wikipedia.org"> <img src="images/logo.png" width="200" >
 
 ## 📔 Содержание:
 - Технологии и инструменты
@@ -17,25 +17,21 @@
 |[<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" width="50" height="50" />](https://www.java.com) | [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" width="50" height="50" />](https://www.jetbrains.com/idea/) | [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="50" height="50" />](https://github.com) | [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" width="50" height="50" />](https://junit.org/junit5/) | [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" width="50" height="50" />](https://gradle.org) | [<img src="images/Selenide.svg" width="50" height="50" />](https://selenide.org) | [<img src="images/Selenoid.svg" width="50" height="50" />](https://aerokube.com/selenoid/) | [<img src="images/Allure_Report.svg" width="50" height="50" />](https://docs.qameta.io/allure/) | [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="50" height="50" />](https://www.jenkins.io) | [<img src="images/Telegram.svg" width="50" height="50" />](https://telegram.org) | [<img src="images/TestOps.svg" width="50" height="50" />](https://telegram.org) |
 
 ## ☑️ Описание автоматизированных тестов
-- Все тесты помечены тегом @Tag("web")
-- Используется степовый подход с описанием действий через step()
-- Применен паттерн Page Object для работы с страницами
+- Все тесты помечены тегами
+- Шаговый подход через step()
+- Четкое разделение тестов по функционалу
 ### Структура тестов
-Тесты разделены на 3 основных класса по функциональным блокам:
-- SearchTests - тестирование функционала поиска книг
-- LoginTests - тестирование авторизации пользователя
-- BasketTests - тестирование работы с корзиной
+Тесты разделены на 3 класса по функциональным блокам:
+- SearchTests - тестирование поиска статей
+- SavedTests - работа с избранными статьями
+- HistoryTests - проверка истории просмотров
 ### Описание реализованных проверок
-#### Класс SearchTests - Функционал поиска книг
-- Поиск книги по автору
-- Поиск книги по точному названию
-#### Класс LoginTests - Функционал авторизации
-- Успешная авторизация с валидными данными
-- Авторизация с неверным паролем
-- Авторизация с неверным email
-#### Класс BasketTests - Функционал работы с корзиной
-- Добавление книги в корзину
-- Удаление книги из корзины
+#### SearchTests - Функционал поиска
+- Успешный поиск статьи по ключевому слову
+#### SavedTests - Работа с избранным
+- Добавление статьи в избранное
+#### HistoryTests - История просмотров
+- Проверка сохранения истории
 
 ## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="50" height="50" /> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/BooksShop/)
 <p align="center">
@@ -43,25 +39,28 @@
 </p> 
 
 ### Параметры сборки в Jenkins:
-- browser (браузер chrome)
-- browser_version (версия браузера 127.0)
-- screen_resolution (разрешение экрана 1920x1080)
+- deviceHost (local, browserstack)
 
 ## ▶️ Запуск автотестов
 
 ### Запуск тестов из терминала
-
+#### Локально на эмуляторе:
 ```bash
-gradle clean test
+gradle clean android_emulation
 ```
+#### На BrowserStack:
+```bash
+gradle clean android_browserstack
+```
+#### Для работы тестов необходимо:
+- Для локальных тестов - запущенный Appium сервер и эмулятор
+- Для BrowserStack - корректные учетные данные в browserstack.properties
 
 ### Запуск тестов на удаленном браузере
 
 ```bash
--Dbrowser=${BROWSER}
--Dscreen_resolution=${SCREEN_RESOLUTION}
--Dbrowser_version=${BROWSER_VERSION}
--DremoteUrl="https://user1:1234@${SELENOID_URL}/wd/hub"
+clean test
+-DdeviceHost=${deviceHost}
 ```
 
 ## <img src="images/Allure_Report.svg" width="50" height="50" /> [Allure Report](https://jenkins.autotests.cloud/job/BooksShop/allure/)
