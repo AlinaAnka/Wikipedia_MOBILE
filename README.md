@@ -44,6 +44,9 @@
 ## ▶️ Запуск автотестов
 
 ### Запуск тестов из терминала
+```bash
+gradle clean
+```
 #### Локально на эмуляторе:
 ```bash
 gradle clean android_emulation
@@ -88,3 +91,8 @@ clean test
 <p align="center">  
 <img src="images/Telegram.png" width="500">
 </p>  
+
+## <img src="images/Selenoid.svg" width="50" height="50" /> Примеры видео выполнения тестов на Selenoid
+<p align="center">  
+<img src="images/Video.gif" width="900">
+</p>
