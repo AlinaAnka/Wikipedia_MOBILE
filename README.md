@@ -45,7 +45,7 @@
 
 ### Запуск тестов из терминала
 ```bash
-gradle clean
+gradle clean test
 ```
 #### Локально на эмуляторе:
 ```bash
