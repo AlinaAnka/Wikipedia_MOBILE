@@ -98,5 +98,5 @@ clean test
 
 ## <img src="images/Selenoid.svg" width="50" height="50" /> Примеры видео выполнения тестов на Selenoid
 <p align="center">  
-<img src="images/Video.gif" width="900">
+<img src="images/Video.gif" width="300">
 </p>
