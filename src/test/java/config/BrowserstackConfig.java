@@ -25,10 +25,4 @@ public interface BrowserstackConfig extends Config {
 
     @Key("android.version")
     String androidVersion();
-
-    @Key("ios.device")
-    String iosDevice();
-
-    @Key("ios.version")
-    String iosVersion();
 }

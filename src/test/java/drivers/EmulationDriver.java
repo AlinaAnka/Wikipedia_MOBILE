@@ -13,7 +13,6 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
 public class EmulationDriver implements WebDriverProvider {
 
     private static final EmulationConfig config = ConfigFactory.create(EmulationConfig.class);
@@ -32,10 +31,10 @@ public class EmulationDriver implements WebDriverProvider {
         options.setAppActivity(config.appActivity());
         options.setAutomationName(config.automationName());
 
-                    try {
-                        return new AndroidDriver(new URL(config.url()), options);
-                    } catch (MalformedURLException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }
+        try {
+            return new AndroidDriver(new URL(config.url()), options);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

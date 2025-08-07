@@ -23,18 +23,9 @@ public class BrowserstackDriver implements WebDriverProvider {
 
         caps.setCapability("browserstack.user", config.userName());
         caps.setCapability("browserstack.key", config.accessKey());
-
-        String platform = System.getProperty("platform", "android");
-
-        if ("ios".equals(platform)) {
-            caps.setCapability("device", config.iosDevice());
-            caps.setCapability("os_version", config.iosVersion());
-            caps.setCapability("app", config.app());
-        } else {
-            caps.setCapability("device", config.androidDevice());
-            caps.setCapability("os_version", config.androidVersion());
-            caps.setCapability("app", config.app());
-        }
+        caps.setCapability("device", config.androidDevice());
+        caps.setCapability("os_version", config.androidVersion());
+        caps.setCapability("app", config.app());
         caps.setCapability("project", "Java Project");
         caps.setCapability("build", "browserstack-build");
         caps.setCapability("name", "test");
