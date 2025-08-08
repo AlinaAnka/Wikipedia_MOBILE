@@ -99,5 +99,5 @@ ${Task}
 </p>
 
 <p align="center">  
-<img src="images/Video2.gif" width="300">
+<img src="images/video2.gif" width="300">
 </p>
