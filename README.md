@@ -32,18 +32,19 @@
 ### Описание реализованных проверок
 #### SearchTests - Функционал поиска
 - Успешный поиск статьи по ключевому слову
+- Поиск статьи о Google
 #### SavedTests - Работа с избранным
 - Добавление статьи в избранное
 #### HistoryTests - История просмотров
 - Проверка сохранения истории
 
-## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="50" height="50" /> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/BooksShop/)
+## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="50" height="50" /> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Wikipedia_Mobile/)
 <p align="center">
 <img src="images/Jenkins.png">
 </p> 
 
 ### Параметры сборки в Jenkins:
-- deviceHost (local, browserstack)
+- Task (android_browserstack)
 
 ## ▶️ Запуск автотестов
 
@@ -66,11 +67,12 @@ gradle clean android_browserstack
 ### Запуск тестов на удаленном браузере
 
 ```bash
-clean test
--DdeviceHost=${deviceHost}
+clean
+${Task}
+-Dbrowserstack.url=https://hub.browserstack.com/wd/hub
 ```
 
-## <img src="images/Allure_Report.svg" width="50" height="50" /> [Allure Report](https://jenkins.autotests.cloud/job/BooksShop/allure/)
+## <img src="images/Allure_Report.svg" width="50" height="50" /> [Allure Report](https://jenkins.autotests.cloud/job/Wikipedia_Mobile/allure/)
 ### Overview
 <p align="center">  
 <img src="images/Allure.png">
@@ -81,15 +83,10 @@ clean test
 <img src="images/Allure2.png">
 </p>  
 
-## <img src="images/TestOps.svg" width="50" height="50" /> [Allure TestOps](https://allure.autotests.cloud/project/4846/test-cases?treeId=0)
+## <img src="images/TestOps.svg" width="50" height="50" /> [Allure TestOps](https://allure.autotests.cloud/project/4845/test-cases?treeId=0)
 <p align="center">  
-<img src="images/Dashboard.png">
+<img src="images/TestOps.png">
 </p>  
-
-### Ручные и и автоматизированные тест кейсы
-<p align="center">  
-<img src="images/TestCase.png">
-</p> 
 
 ## <img src="images/Telegram.svg" width="40" height="40" /> Уведомления в Telegram с использованием бота
 <p align="center">  
@@ -99,4 +96,8 @@ clean test
 ## <img src="images/Selenoid.svg" width="50" height="50" /> Примеры видео выполнения тестов на Selenoid
 <p align="center">  
 <img src="images/Video.gif" width="300">
+</p>
+
+<p align="center">  
+<img src="images/Video2.gif" width="300">
 </p>
