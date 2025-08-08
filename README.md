@@ -94,10 +94,7 @@ ${Task}
 </p>  
 
 ## <img src="images/Selenoid.svg" width="50" height="50" /> Примеры видео выполнения тестов на Selenoid
-<p align="center">  
-<img src="images/Video.gif" width="300">
-</p>
-
-<p align="center">  
-<img src="images/video2.gif" width="300">
+<p align="center">
+  <img src="images/Video.gif" width="300">
+  <img src="images/Video2.gif" width="300">
 </p>
