@@ -1,4 +1,4 @@
-# Проект по автоматизации тестовых сценариев для мобильного приложения Wikipedia <a href="https://www.wikipedia.org"> <img src="images/logo.png" width="200" >
+# Проект по автоматизации тестовых сценариев для мобильного приложения [Wikipedia](https://www.wikipedia.org) <a href="https://www.wikipedia.org"> <img src="images/logo.png" width="200" >
 
 ## 📔 Содержание:
 - Технологии и инструменты
